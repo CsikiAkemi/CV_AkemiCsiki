@@ -14,9 +14,9 @@ document.querySelectorAll(".nav-link").forEach((link) =>
 );
 
 function openEmailClient() {
-  const recipient = 'cimzett@example.com'; // Az email címzettje
-  const subject = 'Ez egy teszt email';     // Téma
-  const body = 'Ez az email törzse.';       // Üzenet törzse
+  const recipient = 'sisina.akemi@gmail.com'; // Az email címzettje
+  const subject = 'Write the subject';     // Téma
+  const body = '';       // Üzenet törzse
   
   // Az URL-kódolt email sablon generálása
   const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
