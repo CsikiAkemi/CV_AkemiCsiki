@@ -1,0 +1,762 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Alapértelmezett body stílusok */
+body {
+  background: rgb(243, 247, 243); /* Háttérszín */
+  padding: 0 20px; /* Belpadding */
+  width: 100%; /* Teljes szélesség */
+  margin: 0 auto; /* Középre igazítás */
+  color: #000; /* Alapértelmezett szövegszín */
+ 
+}
+
+/* NAV (Navigációs sáv) */
+
+.language-switch button{
+  background-color: #5352488a; /* Háttérszín */
+  border: none; /* Border eltávolítása */
+  padding: 10px 20px; /* Padding */
+  font-size: 1rem; /* Betűméret */
+  color: #333; /* Szöveg szín */
+  border-radius: 5px; /* Lekerekített sarkok */
+  cursor: pointer; /* Kéz kurzor */
+  transition: background-color 0.3s ease; /* Áttűnési idő */
+  color: white;
+
+  text-align: center;
+}
+
+.logo {
+  color:grey; /* Fehér szín a logónak */
+  font-size: 1.5rem; /* Logó betűmérete */
+  font-weight: bold; /* Féltett betűstílus */
+}
+
+nav {
+  z-index: +1;
+  position: fixed; /* Rögzített pozíció */
+  right: 0; /* Jobb oldalra igazítás */
+  height: 75px; /* Magasság */
+  width: 100%; /* Teljes szélesség */
+  display: -webkit-box; /* Flexbox beállítások */
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-around; /* Elemek elosztása */
+  margin: 0 auto; /* Középre igazítás */
+  text-align: center; /* Szöveg középre igazítása */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; /* Elemek középre igazítása függőlegesen */
+  background-color: rgba(224, 223, 223, 0.882);
+}
+
+ul {
+  margin-bottom: 0; /* Listák alsó margója */
+}
+
+.navbar {
+  text-align: center; /* Szöveg középre igazítása */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; /* Elemek középre igazítása */
+  -webkit-transition: all 0.5s; /* Áttűnési idő */
+  transition: all 0.5s;
+}
+
+.nav-menu li {
+  list-style: none; /* Lista stílus eltávolítása */
+  padding: 0 1rem; /* Padding az elemek között */
+}
+
+.nav-menu {
+  width: 100%; /* Teljes szélesség */
+  display: -webkit-box; /* Flexbox beállítások */
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto; /* Középre igazítás */
+  text-align: center; /* Szöveg középre igazítása */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; /* Elemek középre igazítása */
+  -ms-flex-pack: distribute;
+  justify-content: space-around; /* Elemek elosztása */
+  color: #000;
+  margin-right: 20px; /* Jobb oldali margó */
+  border-radius: 20px; /* Lekerekített sarkok */
+}
+
+a.nav-link {
+  color:grey; /* Link színe */
+  text-decoration: underline; /* Link aláhúzása */
+  font-size: 1.5rem; /* Betűméret */
+  -webkit-transition: 0.5s; /* Áttűnési idő */
+  transition: 0.5s;
+}
+
+a.nav-link:hover {
+  color: rgba(26, 188, 5, 0.477); /* Hover szín */
+}
+
+.hamburger {
+  display: none; /* Alapértelmezés szerint rejtve */
+  background-color: #5352488a; /* Háttérszín */
+  width: 50px;
+}
+
+.bar,
+.fa-times {
+  width: 1.5rem; /* Szélesség */
+  height: 3px; /* Magasság */
+  display: block; /* Blokk szintű elem */
+  color: #fff; /* Fehér szín */
+  padding: 0; /* Padding eltávolítása */
+  margin: 6px; /* Margó */
+  -webkit-transition: 0.5s; /* Áttűnési idő */
+  transition: 0.5s;
+  background-color: #e9e2e2; /* Háttérszín */
+}
+
+.bar:nth-child(1) {
+  width: 100%; /* Első sáv szélessége */
+}
+
+.bar:nth-child(2) {
+  width: 200%; /* Második sáv szélessége */
+}
+
+.bar:nth-child(3) {
+  width: 300%; /* Harmadik sáv szélessége */
+}
+
+@media (max-width: 992px) {
+  .hamburger {
+      display: block; /* Mobil nézetben megjelenik */
+  }
+  .active .bar:nth-child(2) {
+      opacity: 0; /* Második sáv eltüntetése aktív állapotban */
+  }
+  .active .bar:nth-child(1) {
+      -webkit-transform: translateY(8px) rotate(-315deg); /* Első sáv animációja aktív állapotban */
+      transform: translateY(8px) rotate(-315deg);
+      width: 300%; /* Első sáv szélessége aktív állapotban */
+  }
+  .active .bar:nth-child(3) {
+      -webkit-transform: translateY(-10px) rotate(-45deg); /* Harmadik sáv animációja aktív állapotban */
+      transform: translateY(-10px) rotate(-45deg);
+      width: 300%; /* Harmadik sáv szélessége aktív állapotban */
+  }
+  .nav-menu {
+      width: 90%; /* Szélesség mobil nézetben */
+      display: -webkit-box; /* Flexbox beállítások */
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical; /* Függőleges elrendezés */
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: center; /* Középre igazítás */
+      align-items: center; /* Középre igazítás */
+      position: fixed; /* Rögzített pozíció mobil nézetben */
+      top: 75px; /* Felső margó */
+      right: -100%; /* Rejtett pozíció jobbra */
+      -webkit-transition: 0.5s; /* Áttűnési idő */
+      transition: 0.5s;
+      margin: 0 auto; /* Középre igazítás */
+      background-color: rgba(224, 223, 223, 0.882);
+ 
+  }
+
+  .nav-menu li {
+      padding: 1rem 0; /* Padding a listaelemek között */
+  
+  }
+
+  a.nav-link {
+      margin: 1rem 0; /* Margó a linkek között */
+      color: #000;/* Link szín mobil nézetben */
+      z-index: 1; /* Z-index beállítása a megfelelő rétegben tartáshoz */
+  }
+
+  .active {
+      right: 0; /* Megjelenítése aktív állapotban */
+      z-index: 100; /* Z-index beállítása aktív állapotban */
+      transition: 0.2s ease; /* Áttűnési idő aktív állapotban */
+  }
+
+  .language-switch button{
+    
+    text-align: center;
+    font-size: 0.5rem;
+    padding: auto;
+
+
+  }
+}
+
+@media screen and (max-width: 480px) {
+  a.nav-link {
+      padding: 0.75rem 0; /* Padding a linkek között */
+  }
+}
+/* NAV */
+
+/* Main */
+
+/* Általános reset és box-sizing beállítások */
+* {
+  margin: 0; /* Margin eltávolítása */
+  padding: 0; /* Padding eltávolítása */
+  box-sizing: border-box; /* Box-sizing beállítás */
+}
+
+/* Fő wrapper stílusok */
+.wrapper {
+  display: flex; /* Flexbox elrendezés */
+  flex-direction: column; /* Oszlopirányú elrendezés */
+  align-items: center; /* Középre igazítás */
+  padding: 20px; /* Padding */
+  background-color:rgb(248, 248, 248); /* Háttérszín */
+  width: 100%; /* Teljes szélesség */
+  border-radius: 10px; /* Lekerekített sarkok */
+}
+
+/* Kiemelt doboz stílusok */
+.featured-box {
+  margin-top: 70px; /* Felső margó */
+  display: flex; /* Flexbox elrendezés */
+  flex-wrap: wrap; /* Tartalom wrap */
+  align-items: center; /* Középre igazítás */
+  justify-content: center; /* Középre igazítás */
+  width: 100%; /* Teljes szélesség */
+  background-color:rgba(253, 253, 253, 0.849); /* Háttérszín */
+  padding: 20px; /* Padding */
+  gap: 20px; /* Távolság az elemek között */
+  box-sizing: border-box; /* Box-sizing beállítás */
+  border-radius: 10px; /* Lekerekített sarkok */
+
+}
+
+/* Kiemelt szöveg stílusok */
+.featured-text {
+  max-width: 600px; /* Szélesség korlátozása */
+  color: rgb(7, 6, 6); /* Szöveg szín */
+  text-align: center; /* Szöveg középre igazítása */
+}
+
+/* Név animáció */
+.hello p {
+  font-size: 2.5rem; /* Betűméret */
+  font-weight: bold; /* Féltett betűstílus */
+  color: #8f8d88; /* Szín */
+  animation: fadeIn 2s ease-in-out; /* Animáció */
+}
+
+/* Keyframes az animációhoz */
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Kezdő átlátszóság */
+      transform: translateY(-20px); /* Kezdő pozíció */
+  }
+  to {
+      opacity: 1; /* Végső átlátszóság */
+      transform: translateY(0); /* Végső pozíció */
+  }
+}
+
+/* Szöveges információk stílusok */
+.text-info p {
+  font-size: 1.5rem; /* Betűméret */
+  font-weight: 300; /* Könnyű betűstílus */
+}
+
+/* Gombok stílusai */
+.text-btn {
+  margin-top: 20px; /* Felső margó */
+  display: flex; /* Flexbox elrendezés */
+  justify-content: center; /* Középre igazítás */
+  gap: 10px; /* Távolság a gombok között */
+}
+
+
+.text-btn .btnHire{
+  background-color: rgba(224, 223, 223, 0.507);
+  border: none; /* Border eltávolítása */
+  padding: 10px 20px; /* Padding */
+  font-size: 1rem; /* Betűméret */
+  color: #333; /* Szöveg szín */
+  border-radius: 5px; /* Lekerekített sarkok */
+  cursor: pointer; /* Kéz kurzor */
+  transition: background-color 0.3s ease; /* Áttűnési idő */
+}
+
+.text-btn .btnDwnload{
+  background-color: rgba(224, 223, 223, 0.507);
+  border: none; /* Border eltávolítása */
+  padding: 10px 20px; /* Padding */
+  font-size: 1rem; /* Betűméret */
+  color: #333; /* Szöveg szín */
+  border-radius: 5px; /* Lekerekített sarkok */
+  cursor: pointer; /* Kéz kurzor */
+  transition: background-color 0.3s ease; /* Áttűnési idő */
+}
+
+.btn:hover {
+  background-color: #3b3a36; /* Hover szín */
+}
+
+.btn i {
+  margin-left: 5px; /* Margin a bal oldalon */
+}
+
+/* Social ikonok stílusai */
+.social_icons {
+  display: flex; /* Flexbox elrendezés */
+  justify-content: center; /* Középre igazítás */
+  gap: 10px; /* Távolság az ikonok között */
+  margin-top: 20px; /* Felső margó */
+}
+
+
+
+.icon {
+  font-size: 1.5rem; /* Betűméret */
+  color: #fff; /* Szöveg szín */
+}
+
+/* Kiemelt kép stílusai */
+.featured-image {
+  max-width: 300px; /* Max szélesség */
+  width: 100%; /* Teljes szélesség */
+  height: auto; /* Automatikus magasság */
+  display: flex; /* Flexbox elrendezés */
+  justify-content: center; /* Középre igazítás */
+}
+
+.picofme {
+  width: 100%; /* Teljes szélesség */
+  height: auto; /* Automatikus magasság */
+  border-radius: 100%; /* Lekerekített sarkok */
+}
+
+/* Media queryk a reszponzivitás érdekében */
+@media (max-width: 768px) {
+  .featured-box {
+      flex-direction: column; /* Oszlopirányú elrendezés */
+      align-items: center; /* Középre igazítás */
+  }
+
+  .featured-text {
+      text-align: center; /* Szöveg középre igazítása */
+  }
+
+  .text-btn {
+      flex-direction: column; /* Oszlopirányú elrendezés */
+  }
+
+  .social_icons {
+      flex-direction: column; /* Oszlopirányú elrendezés */
+  }
+}
+
+/* Képességek (Skills) szakasz stílusai */
+.skills {
+  width: 400px; /* Szélesség */
+  margin: 0 auto; /* Középre igazítás */
+}
+
+/* Skill bar animációk keyframes */
+@keyframes load {
+  from {
+      width: 0; /* Kezdő szélesség */
+  }
+}
+
+@-webkit-keyframes load {
+  from {
+      width: 0; /* Kezdő szélesség */
+  }
+}
+
+@-moz-keyframes load {
+  from {
+      width: 0; /* Kezdő szélesség */
+  }
+}
+
+@-o-keyframes load {
+  from {
+      width: 0; /* Kezdő szélesség */
+  }
+}
+
+/* About (Rólam) szakasz stílusai */
+#about {
+  width: 100%; /* Teljes szélesség */
+  padding: 40px 20px; /* Padding */
+  background-color:rgba(218, 212, 212, 0.178); /* Háttérszín */
+  box-sizing: border-box; /* Box-sizing beállítás */
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+
+}
+
+/* Felső fejléc stílusai */
+.top-header h1 {
+  text-align: center; /* Szöveg középre igazítása */
+  font-size: 2.5rem; /* Betűméret */
+  color: #007BFF; /* Szín */
+  margin-bottom: 20px; /* Alsó margó */
+}
+
+/* Sor stílusok */
+.row {
+  display: flex; /* Flexbox elrendezés */
+  flex-wrap: wrap; /* Wrap beállítás */
+  align-items: center; /* Középre igazítás */
+  justify-content: center; /* Középre igazítás */
+  gap: 20px; /* Távolság az elemek között */
+
+}
+
+/* Oszlop stílusok */
+.col {
+  flex: 1; /* Rugalmas szélesség */
+  max-width: 600px; /* Max szélesség */
+}
+
+/* About info stílusok */
+.about-info {
+  display: flex; /* Flexbox elrendezés */
+  flex-direction: row; /* Sorirányú elrendezés */
+  align-items: center; /* Középre igazítás */
+  justify-content: space-between; /* Elemek elosztása */
+
+}
+
+/* About me stílusok */
+.about-me {
+  flex: 1; /* Rugalmas szélesség */
+  max-width: 100%; /* Max szélesség */
+}
+
+/* Figcaption stílusok */
+.about-me figcaption {
+  font-size: 1.2rem; /* Betűméret */
+  color: black; /* Szöveg szín */
+}
+
+/* Heading stílusok az About me szakaszban */
+.about-me h2 {
+  font-size: 2rem; /* Betűméret */
+  color: #007BFF; /* Szín */
+  margin-bottom: 10px; /* Alsó margó */
+}
+
+/* Bekezdés stílusok az About me szakaszban */
+.about-me p {
+  font-size: 1rem; /* Betűméret */
+  line-height: 1.6; /* Sormagasság */
+  margin-bottom: 20px; /* Alsó margó */
+}
+
+/* Media query a reszponzivitás érdekében */
+@media (max-width: 768px) {
+  .row {
+      flex-direction: column; /* Oszlopirányú elrendezés */
+  }
+
+  .about-info {
+      flex-direction: column; /* Oszlopirányú elrendezés */
+      text-align: center; /* Szöveg középre igazítása */
+  }
+}
+
+/* Skill bar stílusok */
+.skillbar {
+  background-color: #e5e5e5; /* Háttérszín */
+  padding: 2px; /* Padding */
+  border-radius: 15px; /* Lekerekített sarkok */
+  margin-bottom: 5px; /* Alsó margó */
+  font-size: 14px; /* Betűméret */
+  color: #FFF; /* Szöveg szín */
+  font-weight: bold; /* Féltett betűstílus */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); /* Szövegszárny */
+}
+
+.skills h1{
+  color: #007BFF; /* Szín */
+}
+
+.skillbar::before {
+  content: attr(data-skill); /* Skill szöveg */
+  display: inline-block; /* Inline blokk */
+  padding: 5px 0 5px 10px; /* Padding */
+  border-radius: inherit; /* Öröklött lekerekítés */
+  animation: load 2s 0s; /* Animáció */
+  -webkit-animation: load 2s 0s; /* Webkit animáció */
+  -moz-animation: load 2s 0s; /* Moz animáció */
+  -o-animation: load 2s 0s; /* O animáció */
+}
+
+/* Skill szint stílusok */
+.skillbar.learning::before {
+  width: calc(20% - 14px); /* Szélesség */
+  background: #9ac4e9; /* Háttérszín */
+}
+
+.skillbar.basic::before {
+  width: calc(40% - 14px); /* Szélesség */
+  background: #71A8D9; /* Háttérszín */
+}
+
+.skillbar.intermediate::before {
+  width: calc(60% - 14px); /* Szélesség */
+  background: #3981BF; /* Háttérszín */
+}
+
+.skillbar.advanced::before {
+  width: calc(80% - 14px); /* Szélesség */
+  background: #175a93; /* Háttérszín */
+}
+
+.skillbar.expert::before {
+  width: calc(100% - 14px); /* Szélesség */
+  background: #163A59; /* Háttérszín */
+}
+
+/* További media queryk kisebb eszközökhöz */
+@media (max-width: 1200px) {
+  .skills {
+      width: 100%; /* Teljes szélesség */
+      margin: 0; /* Margin eltávolítása */
+  }
+}
+
+@media (max-width: 768px) {
+  .top-header h1 {
+      font-size: 2rem; /* Betűméret */
+  }
+
+  .about-me h2 {
+      font-size: 1.5rem; /* Betűméret */
+  }
+
+  .about-me p {
+      font-size: 0.9rem; /* Betűméret */
+  }
+}
+
+/* Kártyák stílusai */
+
+.projecth1{
+  color: #007BFF; /* Szín */
+}
+body .container {
+  background-color:rgba(218, 212, 212, 0.178); /* Háttérszín */
+  display: flex; /* Flexbox elrendezés */
+  justify-content: center; /* Középre igazítás */
+  align-items: center; /* Középre igazítás */
+  flex-wrap: wrap; /* Wrap beállítás */
+  max-width: 1200px; /* Max szélesség */
+  margin: 40px 0; /* Margin */
+}
+
+body .container .card {
+  position: relative; /* Relatív pozicionálás */
+  min-width: 320px; /* Minimum szélesség */
+  height: 440px; /* Magasság */
+  box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.3), -5px -5px 15px rgba(255, 255, 255, 0.1); /* Árnyékok */
+  border-radius: 15px; /* Lekerekített sarkok */
+  margin: 30px; /* Margin */
+  transition: 0.5s; /* Áttűnési idő */
+}
+
+#card1 {
+  background-image: url("img/garontech.png"); /* Háttérkép */
+}
+
+#card2 {
+  background-image: url("img/memorygamepic.png"); /* Háttérkép */
+}
+
+#card3 {
+  background-image: url("img/sandwich.png"); /* Háttérkép */
+}
+
+body .container .card:nth-child(1) .box .content a {
+  background: #2196f3; /* Háttérszín */
+}
+
+body .container .card:nth-child(2) .box .content a {
+  background: #e91e63; /* Háttérszín */
+}
+
+body .container .card:nth-child(3) .box .content a {
+  background: #23c186; /* Háttérszín */
+}
+
+body .container .card .box {
+  position: absolute; /* Absolút pozicionálás */
+  top: 20px; /* Felső margó */
+  left: 20px; /* Bal margó */
+  right: 20px; /* Jobb margó */
+  bottom: 20px; /* Alsó margó */
+  background-repeat: no-repeat; /* Háttérkép ismétlés */
+  border-radius: 15px; /* Lekerekített sarkok */
+  display: flex; /* Flexbox elrendezés */
+  justify-content: center; /* Középre igazítás */
+  align-items: center; /* Középre igazítás */
+  overflow: hidden; /* Túlfolyás rejtése */
+  transition: 0.5s; /* Áttűnési idő */
+}
+
+body .container .card .box:hover {
+  transform: translateY(-50px); /* Mozgatás hover esetén */
+}
+
+body .container .card .box:before {
+  content: ""; /* Üres tartalom */
+  position: absolute; /* Absolút pozicionálás */
+  top: 0; /* Felső margó */
+  left: 0; /* Bal margó */
+  width: 50%; /* Szélesség */
+  height: 100%; /* Magasság */
+}
+
+body .container .card .box .content {
+  padding: 20px; /* Padding */
+  text-align: center; /* Szöveg középre igazítása */
+}
+
+body .container .card .box .content h2 {
+  position: absolute; /* Absolút pozicionálás */
+  top: -10px; /* Felső margó */
+  right: 30px; /* Jobb margó */
+  font-size: 8rem; /* Betűméret */
+  color: rgba(255, 255, 255, 0.1); /* Szöveg szín */
+}
+
+body .container .card .box .content h3 {
+  font-size: 1.8rem; /* Betűméret */
+  color: #f50d15; /* Szöveg szín */
+  text-shadow: 2px 2px; /* Szövegszárny */
+  font-size: 30px; /* Betűméret */
+  z-index: 1; /* Z-index */
+  transition: 0.5s; /* Áttűnési idő */
+  margin-bottom: 15px; /* Alsó margó */
+}
+
+body .container .card .box .content p {
+  font-size: 1rem; /* Betűméret */
+  font-weight: 300; /* Könnyű betűstílus */
+  color: rgba(255, 255, 255, 0.9); /* Szöveg szín */
+  z-index: 1; /* Z-index */
+  transition: 0.5s; /* Áttűnési idő */
+}
+
+body .container .card .box .content a {
+  position: relative; /* Relatív pozicionálás */
+  display: inline-block; /* Inline blokk */
+  padding: 8px 20px; /* Padding */
+  background: black; /* Háttérszín */
+  border-radius: 5px; /* Lekerekített sarkok */
+  text-decoration: none; /* Link dekoráció eltávolítása */
+  color: white; /* Szöveg szín */
+  margin-top: 20px; /* Felső margó */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Árnyék */
+  transition: 0.5s; /* Áttűnési idő */
+}
+
+body .container .card .box .content a:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Árnyék hover esetén */
+  background: #fff; /* Háttérszín hover esetén */
+  color: #000; /* Szöveg szín hover esetén */
+}
+
+ 
+
+/* Footer*/
+.footer{
+  background-color: rgba(224, 223, 223, 0.507);
+  padding:10px 0px;
+  font-family: 'Play', sans-serif;
+  text-align:center;
+  width: 100%;
+
+  }
+  
+  .footer .row .social_icons {
+    display: flex; /* Flexbox elrendezés */
+    justify-content: center; /* Középre igazítás */
+    gap: 10px; /* Távolság az ikonok között */
+    margin-top: 20px; /* Felső margó */
+  }
+  
+  
+  
+
+  .footer .row{
+  width:100%;
+  margin:1% 0%;
+  padding:0.6% 0%;
+  color:rgb(3, 0, 0);
+  font-size:0.8em;
+  }
+  
+  .footer .row a{
+  text-decoration:none;
+  color:rgb(0, 0, 0);
+  transition:0.5s;
+  cursor: pointer;
+  }
+  
+  .footer .row a:hover{
+  color:#3e69ae;
+  }
+
+  .footer .row ul li a:hover{
+    color:#3e69ae;
+    }
+  
+  .footer .row ul{
+  width:100%;
+  }
+  
+  .footer .row ul li{
+  display:inline-block;
+  margin:0px 30px;
+  }
+  
+  .footer .row a i{
+  font-size:2em;
+  margin:0% 1%;
+  }
+  
+  @media (max-width:720px){
+  .footer{
+  text-align:left;
+  padding:5%;
+  }
+  .footer .row ul li{
+  display:block;
+  margin:10px 0px;
+  text-align:left;
+  }
+  .footer .row a i{
+  margin:0% 3%;
+  }
+  }
+  
+  
+  
+  
+/* Footer*/

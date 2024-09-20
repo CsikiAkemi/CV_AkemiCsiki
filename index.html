@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>CV</title>
+    </head>
+    <body>
+        <!-- NAV -->
+        <header>
+            <nav>
+                <div class="logo" id="logo">Akemi Csiki</div>
+                <div class="navbar">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link" id="homelink">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link" id="aboutlink">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#projects-header" class="nav-link" id="projectslink">Projects</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+
+                <div class="language-switch">
+                    <button data-lang="en">EN</button>
+                    <button data-lang="de">DE</button>
+                    <button data-lang="hu">HU</button>
+                </div>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </header>
+        <!-- NAV -->
+
+        <!-- Main -->
+
+        <!-- Section 1. -->
+        <main class="wrapper">
+            <section class="featured-box" id="home">
+                <div class="featured-text">
+                    <div class="hello" id="hello-text">
+                        <p>Hello I'm Akemi Csiki</p>
+                    </div>
+                    <div class="text-info" id="info-text">
+                        <p>My name is Akemi! I am a FrontEnd developer</p>
+                    </div>
+                    <div class="text-btn">
+                        <button class="btnHire" id="hireBtn" onclick="openEmailClient()" >Hire Me</button>
+
+                    
+                            <a href="img/CV_AkemiCsiki.pdf" download="CV_AkemiCsiki">
+                                <button class="btnDwnload" id="downloadBtn" >Download CV<i></i> </button>
+                            </a>
+                       
+                    </div>
+                    <div class="social_icons">
+                        <div class="icon">
+                            <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                        <div class="icon">
+                            <a href="https://github.com" target="_blank" title="GitHub">
+                                <i class="fab fa-github github-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-image">
+                    <div class="image">
+                        <img class="picofme" src="img/IMG_1410.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 1. -->
+
+            <!-- Section 2. -->
+            <section class="section" id="about">
+                <div class="top-header">
+                    <h1 class="abouth1" id="aboutHeader">About Me</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="about-info">
+                            <figure class="about-me">
+                                <figcaption>
+                                    <h2 id="abouttitle">FrontEnd developer</h2>
+                                    <p id="aboutText">I’m Akemi, a passionate beginner front-end developer with a
+                                        strong enthusiasm for crafting engaging and intuitive web experiences. I’m eager
+                                        to apply my growing skills in HTML, CSS, and JavaScript to contribute to
+                                        innovative projects and grow within the dynamic world of web development. With a
+                                        keen eye for design and a commitment to continuous learning, I’m excited to
+                                        embark on this journey and make meaningful contributions to the field.</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <!-- Skillbar -->
+                    <div class="skills">
+                        <h1 id="skills-header">SkillBar</h1>
+                        <div class="skillbar learning" data-skill="C#"></div>
+                        <div class="skillbar basic" data-skill="Java"></div>
+                        <div class="skillbar intermediate" data-skill="TS"></div>
+                        <div class="skillbar advanced" data-skill="JS"></div>
+                        <div class="skillbar expert" data-skill="HTML/CSS"></div>
+                    </div>
+                    <!-- Skillbar -->
+                </div>
+            </section>
+           <!-- Section 2. -->
+
+           <!-- Projects -->
+            <h1 class="projecth1" id="projects-header">Projects</h1>
+            <div class="container">
+                <div class="card">
+                    <div class="box" id="card1">
+                        <div class="content">
+                            <a href="https://csikiakemi.github.io/prooktatas_vizsgafeladat_GARONTECH/" target="_blank" id="card1-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box" id="card2">
+                        <div class="content">
+                            <a href="https://csikiakemi.github.io/Mem-ria_j-t-k_Json/" target="_blank" id="card2-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box" id="card3">
+                        <div class="content">
+                            <a href="https://csikiakemi.github.io/SandwichMakerApp/" target="_blank" id="card3-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Projects -->
+        </main>
+        <!-- Main -->
+
+        <!-- Site footer -->
+        <footer>
+            <div class="footer">
+            <div class="row">
+                <div class="social_icons">
+                    <div class="icon">
+                        <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://github.com" target="_blank" title="GitHub">
+                            <i class="fab fa-github github-icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+            <ul>
+                
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                 
+                <li>
+                    <a href="#aboutHeader">About</a>
+                </li>
+
+                <li>
+                    <a href="#projects-header">Projects</a>
+                </li>
+          
+            </ul>
+            </div>
+            
+            <div class="row" >
+                <p class="right" id="footerRight" >Copyright © 2024. All Rights Reserved.</p>
+            </div>
+            </div>
+            </footer>
+        <!-- Site footer -->
+        <script src="script.js"></script>
+    </body>
+</html>
