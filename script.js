@@ -14,38 +14,54 @@ document.querySelectorAll(".nav-link").forEach((link) =>
 );
 
 function openEmailClient() {
-  const recipient = 'sisina.akemi@gmail.com'; // Az email címzettje
-  const subject = 'Write the subject';     // Téma
-  const body = '';       // Üzenet törzse
-  
-  // Az URL-kódolt email sablon generálása
+  const recipient = 'sisina.akemi@gmail.com';
+  const subject = 'Write the subject';
+  const body = '';
+
+  // URL template generating
   const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-  // A levelező kliens megnyitása
+
   window.location.href = mailtoLink;
 }
 
+function downloadFiles() {
+  const files = [
+    "img/Akemi_Csiki_Resume.pdf",
+    "img/Csiki_Akemi_Öneletrajz.pdf",
 
-document.addEventListener('DOMContentLoaded', function() {
+  ];
+
+  files.forEach(file => {
+    const a = document.createElement("a");
+    a.href = file;
+    a.download = file.split('/').pop();
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   // Load translations from JSON file
   fetch('translations.json')
-      .then(response => response.json())
-      .then(data => {
-          window.translations = data; // Store translations in a global object
-          changeLanguage('en'); // Default language
-      });
-  
+    .then(response => response.json())
+    .then(data => {
+      window.translations = data; // Store translations in a global object
+      changeLanguage('en'); // Default language
+    });
+
   // Add event listeners for language switch buttons
   document.querySelectorAll('.language-switch button').forEach(button => {
-      button.addEventListener('click', () => {
-          changeLanguage(button.dataset.lang);
-      });
+    button.addEventListener('click', () => {
+      changeLanguage(button.dataset.lang);
+    });
   });
 });
 
 function changeLanguage(lang) {
   const translations = window.translations[lang];
-  if (!translations) return ;
+  if (!translations) return;
 
 
   // Update text content based on translations
@@ -65,11 +81,11 @@ function changeLanguage(lang) {
   document.querySelector('.about-info p').textContent = translations.aboutText; // corrected from 'about_me_description'
   document.querySelector('.skills h1').textContent = translations.skillsHeader; // corrected from 'skills_title'
   document.querySelector('.projecth1').textContent = translations.projectsHeader; // corrected from 'projects_title'
-  
+
 
   document.querySelector('.right').textContent = translations.footerRight; // corrected from 'projects_title'
   document.querySelectorAll('.card .content a').forEach(link => {
-      link.textContent = translations.readMore || 'Read More'; // added default value for safety
+    link.textContent = translations.readMore || 'Read More'; // added default value for safety
   });
 
   const footerLinks = document.querySelectorAll('.footer .row ul li a');
@@ -77,7 +93,7 @@ function changeLanguage(lang) {
   footerLinks[0].textContent = translations.footerHome;
   footerLinks[1].textContent = translations.footerAbout;
   footerLinks[2].textContent = translations.footerProjects;
-  
-  
+
+
 
 }

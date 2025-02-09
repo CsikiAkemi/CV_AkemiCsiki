@@ -29,8 +29,9 @@ body {
 }
 
 .logo {
+  padding: 20px;
   color:grey; /* Fehér szín a logónak */
-  font-size: 1.5rem; /* Logó betűmérete */
+  font-size: 1.3rem; /* Logó betűmérete */
   font-weight: bold; /* Féltett betűstílus */
 }
 
